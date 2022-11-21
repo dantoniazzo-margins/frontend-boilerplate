@@ -1,14 +1,18 @@
 import { configureStore } from "@reduxjs/toolkit";
 import globalReducer from "./globalReducer";
 import loginReducer from "../../modules/Login/login.reducer";
+import allUsersReducer from "@/modules/Users/allUsers.reducer";
 import userReducer from "../../modules/Dashboard/user.reducer";
+import counterReducer from "../../modules/Counter/counter.reducer";
 import createSagaMiddleware from "@redux-saga/core";
-import { helloSaga } from "./sagas/userSaga";
+import rootSaga from "./rootSaga";
 
 const sagaMiddleware = createSagaMiddleware();
 
 const store = configureStore({
   reducer: {
+    allUsers: allUsersReducer,
+    counter: counterReducer,
     global: globalReducer,
     login: loginReducer,
     user: userReducer,
@@ -16,9 +20,9 @@ const store = configureStore({
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(sagaMiddleware),
 });
-sagaMiddleware.run(helloSaga);
+sagaMiddleware.run(rootSaga);
 
-export const action = (type: typeof store.dispatch) => store.dispatch({ type });
+export const action = (type: string) => store.dispatch({ type });
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
 

@@ -1,3 +1,4 @@
+import { action } from "@/config/redux/store";
 import { createSlice } from "@reduxjs/toolkit";
 
 interface counterState {
@@ -10,12 +11,15 @@ const counterSlice = createSlice({
   name: "counter",
   initialState,
   reducers: {
-    setCounter: (state, action) => {
-      state.count = action.payload;
+    incrementCounter: (state, action) => {
+      state.count += action.payload;
+    },
+    decrementCounter: (state, action) => {
+      state.count -= action.payload;
     },
   },
 });
 
-export const { setCounter } = counterSlice.actions;
+export const { incrementCounter, decrementCounter } = counterSlice.actions;
 
 export default counterSlice.reducer;

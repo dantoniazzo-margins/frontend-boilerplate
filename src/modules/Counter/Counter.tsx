@@ -1,25 +1,13 @@
-interface Props {
-    value: number;
-    onIncrement: () => void
-    onDecrement: () => void
-    onIncrementAsync: () => void
-}
-
-export const Counter = ({ value, onIncrement, onDecrement, onIncrementAsync }: Props) =>
+import store, { action } from "../../config/redux/store";
+export const Counter = () => (
   <div>
-    <button onClick={onIncrementAsync}>
+    <button onClick={() => action("INCREMENT_ASYNC")}>
       Increment after 1 second
-    </button>
-    {' '}
-    <button onClick={onIncrement}>
-      Increment
-    </button>
-    {' '}
-    <button onClick={onDecrement}>
-      Decrement
-    </button>
+    </button>{" "}
+    <button onClick={() => action("INCREMENT")}>Increment</button>{" "}
+    <button onClick={() => action("DECREMENT")}>Decrement</button>
+    <button onClick={() => action("FETCH_USERS")}>Fetch users</button>
     <hr />
-    <div>
-      Clicked: {value} times
-    </div>
+    {/* <div>Clicked: {value} times</div> */}
   </div>
+);

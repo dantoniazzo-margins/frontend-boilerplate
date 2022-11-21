@@ -1,37 +1,23 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { IUser } from "interfaces/API/User/user";
+import { IUser } from "@/interfaces/API/User/user";
 
-const initialState = {
-  firstName: "",
-  lastName: "",
-  email: "",
-  isEmailConfirmed: false,
-  photo: "",
-  dateOfBirth: undefined,
-  phoneNumber: 0,
-  address: "",
-} as IUser;
+interface userProps {
+  user: IUser;
+}
+const initialState = {} as userProps;
 
-const globalSlice = createSlice({
-  name: "global",
+const userSlice = createSlice({
+  name: "user",
   initialState,
   reducers: {
     setUser: (state, action) => {
-      const payload = action.payload;
-      state.firstName = payload.firstName;
-      state.lastName = payload.lastName;
-      state.email = payload.email;
-      state.isEmailConfirmed = payload.isEmailConfirmed;
-      state.photo = payload.photo;
-      state.dateOfBirth = payload.dateOfBirth;
-      state.phoneNumber = payload.phoneNumber;
-      state.address = payload.address;
+      state.user = action.payload;
     },
   },
 });
 
-export const { setUser } = globalSlice.actions;
+export const { setUser } = userSlice.actions;
 
 export const lastSnapshot = (state: any) => state.items;
 
-export default globalSlice.reducer;
+export default userSlice.reducer;
