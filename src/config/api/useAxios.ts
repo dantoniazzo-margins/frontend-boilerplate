@@ -1,9 +1,9 @@
 import axios from "axios";
 import { envVars } from "../../config/env/envVars";
 import { requestHandler } from "./requestHandler";
-import { requestErrorHandler } from "services/ErrorHandler/requestErrorHandler";
+import { requestErrorHandler } from "@/services/ErrorHandler/requestErrorHandler";
 import { responseHandler } from "./responseHandler";
-import { responseErrorHandler } from "services/ErrorHandler/responseErrorHandler";
+import { responseErrorHandler } from "@/services/ErrorHandler/responseErrorHandler";
 
 export const useAxios = () => {
   const axiosService = axios.create({
