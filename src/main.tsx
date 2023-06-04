@@ -1,22 +1,19 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import App from "./App";
-import "./index.css";
-import { BrowserRouter } from "react-router-dom";
-import { Provider } from "react-redux";
-import store from "./config/redux/store";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './app';
+import './index.css';
+import { Provider } from 'react-redux';
+import store from '@/app/config/redux/store';
 
-if (process.env.NODE_ENV === "production") {
+if (process.env.NODE_ENV === 'production') {
   // eslint-disable-next-line @typescript-eslint/no-empty-function
-  console.log = () => {};
+  console.log = () => void 0;
 }
 
-ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
+ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <Provider store={store}>
     <React.StrictMode>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
+      <App />
     </React.StrictMode>
   </Provider>
 );

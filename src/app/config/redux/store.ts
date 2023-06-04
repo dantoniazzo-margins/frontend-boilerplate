@@ -1,11 +1,10 @@
-import { configureStore } from "@reduxjs/toolkit";
-import globalReducer from "./globalReducer";
-import loginReducer from "../../modules/Login/login.reducer";
-import allUsersReducer from "@/modules/Users/allUsers.reducer";
-import userReducer from "../../modules/Dashboard/user.reducer";
-import counterReducer from "../../features/Counter/counter.reducer";
-import createSagaMiddleware from "@redux-saga/core";
-import rootSaga from "./rootSaga";
+import { configureStore } from '@reduxjs/toolkit';
+import globalReducer from './globalReducer';
+import allUsersReducer from '@/widgets/UsersList/allUsers.reducer';
+import userReducer from '@/entities/User/user.reducer';
+import counterReducer from '@/pages/Counter/counter.reducer';
+import createSagaMiddleware from '@redux-saga/core';
+import rootSaga from './rootSaga';
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -14,7 +13,6 @@ const store = configureStore({
     allUsers: allUsersReducer,
     counter: counterReducer,
     global: globalReducer,
-    login: loginReducer,
     user: userReducer,
   },
   middleware: (getDefaultMiddleware) =>
