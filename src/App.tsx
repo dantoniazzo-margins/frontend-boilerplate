@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import BrowserDetection from "react-browser-detection";
 import { useAppDispatch } from "./config/redux/hooks";
 import { setBrowser } from "./config/redux/globalReducer";
-import { Counter } from "./modules/Counter/Counter";
+import { Counter } from "./features/Counter/Counter";
 function App() {
   const dispatch = useAppDispatch();
   const dispatchBrowser = (browser: string) => {

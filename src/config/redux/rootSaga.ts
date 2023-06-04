@@ -3,7 +3,7 @@ import {
   watchIncrementAsync,
   watchIncrement,
   watchDecrement,
-} from "@/modules/Counter/counter.saga";
+} from "@/features/Counter/counter.saga";
 import { watchFetchUsers } from "@/modules/Users/users.saga";
 
 export default function* rootSaga() {

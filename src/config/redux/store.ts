@@ -3,7 +3,7 @@ import globalReducer from "./globalReducer";
 import loginReducer from "../../modules/Login/login.reducer";
 import allUsersReducer from "@/modules/Users/allUsers.reducer";
 import userReducer from "../../modules/Dashboard/user.reducer";
-import counterReducer from "../../modules/Counter/counter.reducer";
+import counterReducer from "../../features/Counter/counter.reducer";
 import createSagaMiddleware from "@redux-saga/core";
 import rootSaga from "./rootSaga";
 
