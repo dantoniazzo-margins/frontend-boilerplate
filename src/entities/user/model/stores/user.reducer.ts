@@ -1,5 +1,5 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { IUser } from "@/interfaces/API/User/user";
+import { createSlice } from '@reduxjs/toolkit';
+import { IUser } from '@/entities/user/model/interfaces/user';
 
 interface userProps {
   user: IUser;
@@ -7,7 +7,7 @@ interface userProps {
 const initialState = {} as userProps;
 
 const userSlice = createSlice({
-  name: "user",
+  name: 'user',
   initialState,
   reducers: {
     setUser: (state, action) => {

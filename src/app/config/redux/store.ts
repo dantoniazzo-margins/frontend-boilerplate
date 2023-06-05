@@ -1,19 +1,21 @@
 import { configureStore } from '@reduxjs/toolkit';
 import globalReducer from './globalReducer';
 import allUsersReducer from '@/widgets/UsersList/allUsers.reducer';
-import userReducer from '@/entities/User/user.reducer';
-import counterReducer from '@/pages/Counter/counter.reducer';
+import userReducer from '@/entities/user/model/stores/user.reducer';
+import counterReducer from '@/features/counter/counter.reducer';
 import createSagaMiddleware from '@redux-saga/core';
 import rootSaga from './rootSaga';
+import viewerReducer from '@/entities/viewer/model/stores/viewer.reducer';
 
 const sagaMiddleware = createSagaMiddleware();
 
 const store = configureStore({
   reducer: {
-    allUsers: allUsersReducer,
-    counter: counterReducer,
-    global: globalReducer,
-    user: userReducer,
+    allUsersSlice: allUsersReducer,
+    counterSlice: counterReducer,
+    globalSlice: globalReducer,
+    userSlice: userReducer,
+    viewerSlice: viewerReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(sagaMiddleware),

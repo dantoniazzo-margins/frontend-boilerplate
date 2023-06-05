@@ -1,4 +1,4 @@
-import { IUser } from "../User/user";
+import { IUser } from '@/entities/user/model/interfaces/user';
 
 /* ================ Signup Body  =================*/
 export interface ISignUpBody {
