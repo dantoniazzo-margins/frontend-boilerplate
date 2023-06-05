@@ -1,6 +1,6 @@
 import { lazy } from 'react';
 import { Route, Routes, Navigate } from 'react-router-dom';
-import { Counter } from '@/features/counter/Counter';
+import { Counter } from '@/features/counter/ui';
 const Home = lazy(() => import('./home'));
 
 export const Routing = () => {

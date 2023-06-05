@@ -7,4 +7,5 @@ export interface IViewer {
   dateOfBirth?: Date;
   phoneNumber?: number;
   address?: string;
+  moneyCount?: number;
 }

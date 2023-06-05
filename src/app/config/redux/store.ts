@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
 import globalReducer from './globalReducer';
-import allUsersReducer from '@/widgets/UsersList/allUsers.reducer';
+import allUsersReducer from '@/features/usersList/model/allUsers.reducer';
 import userReducer from '@/entities/user/model/stores/user.reducer';
-import counterReducer from '@/features/counter/counter.reducer';
+import counterReducer from '@/features/counter/model/counter.reducer';
 import createSagaMiddleware from '@redux-saga/core';
 import rootSaga from './rootSaga';
 import viewerReducer from '@/entities/viewer/model/stores/viewer.reducer';

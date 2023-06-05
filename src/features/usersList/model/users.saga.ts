@@ -1,6 +1,6 @@
-import { call, put, takeEvery, takeLatest } from "redux-saga/effects";
-import axios, { AxiosResponse } from "axios";
-import { setUsers, setFailure } from "./allUsers.reducer";
+import { call, put, takeEvery, takeLatest } from 'redux-saga/effects';
+import axios, { AxiosResponse } from 'axios';
+import { setUsers, setFailure } from './allUsers.reducer';
 
 interface axiosProps {
   url: string;
@@ -19,7 +19,7 @@ let callAPI = async ({ url, method, data }: axiosProps) => {
 export function* fetchUsers() {
   try {
     const result: AxiosResponse<any> = yield call(() =>
-      callAPI({ url: "https://jsonplaceholder.typicode.com/users" })
+      callAPI({ url: 'https://jsonplaceholder.typicode.com/users' })
     );
     yield put(setUsers(result));
   } catch (e: any) {
@@ -29,5 +29,5 @@ export function* fetchUsers() {
 }
 
 export function* watchFetchUsers() {
-  yield takeEvery("FETCH_USERS", fetchUsers);
+  yield takeEvery('FETCH_USERS', fetchUsers);
 }
